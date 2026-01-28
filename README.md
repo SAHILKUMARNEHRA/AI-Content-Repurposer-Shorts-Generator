@@ -5,3 +5,6 @@ An AI-powered tool designed to process documents and content, leveraging Groq (L
 ## Features
 
 *   **PDF Upload & Parsing:** Automatically extracts text from uploaded PDFs.
+*   **Vector Database:** Stores document embeddings in PostgreSQL using `pgvector`.
+*   **Local Embeddings:** Uses HuggingFace's `all-MiniLM-L6-v2` for fast, free local embeddings.
+*   **Multi-Model Chat:** Toggle seamlessly between Groq API and Google Gemini API for responses.
