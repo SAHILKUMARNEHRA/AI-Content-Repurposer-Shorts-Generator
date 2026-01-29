@@ -8,3 +8,7 @@ An AI-powered tool designed to process documents and content, leveraging Groq (L
 *   **Vector Database:** Stores document embeddings in PostgreSQL using `pgvector`.
 *   **Local Embeddings:** Uses HuggingFace's `all-MiniLM-L6-v2` for fast, free local embeddings.
 *   **Multi-Model Chat:** Toggle seamlessly between Groq API and Google Gemini API for responses.
+*   **Modern UI:** Built with React, Vite, Tailwind CSS, and Lucide icons. Features Dark Mode!
+
+## Tech Stack
+
