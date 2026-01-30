@@ -12,3 +12,6 @@ An AI-powered tool designed to process documents and content, leveraging Groq (L
 
 ## Tech Stack
 
+*   **Frontend:** React (Vite), Tailwind CSS
+*   **Backend:** FastAPI (Python), SQLAlchemy
+*   **Database:** PostgreSQL with `pgvector` extension
