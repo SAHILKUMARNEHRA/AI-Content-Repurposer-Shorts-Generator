@@ -19,3 +19,6 @@ An AI-powered tool designed to process documents and content, leveraging Groq (L
 
 ## Getting Started
 
+### Backend Setup
+1. `cd backend`
+2. `python -m venv venv && source venv/bin/activate`
