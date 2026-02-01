@@ -22,3 +22,7 @@ An AI-powered tool designed to process documents and content, leveraging Groq (L
 ### Backend Setup
 1. `cd backend`
 2. `python -m venv venv && source venv/bin/activate`
+3. `pip install -r requirements.txt`
+4. Create a `.env` file in the `backend` directory:
+   ```env
+   DATABASE_URL=postgresql://user:password@localhost:5432/rag_db
