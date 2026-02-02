@@ -26,3 +26,6 @@ An AI-powered tool designed to process documents and content, leveraging Groq (L
 4. Create a `.env` file in the `backend` directory:
    ```env
    DATABASE_URL=postgresql://user:password@localhost:5432/rag_db
+   GROQ_API_KEY=your_groq_key
+   GEMINI_API_KEY=your_gemini_key
+   ```
