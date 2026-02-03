@@ -29,3 +29,7 @@ An AI-powered tool designed to process documents and content, leveraging Groq (L
    GROQ_API_KEY=your_groq_key
    GEMINI_API_KEY=your_gemini_key
    ```
+5. Run the server: `uvicorn main:app --reload`
+
+### Frontend Setup
+1. `cd frontend`
