@@ -33,3 +33,10 @@ An AI-powered tool designed to process documents and content, leveraging Groq (L
 
 ### Frontend Setup
 1. `cd frontend`
+2. `npm install`
+3. Run the dev server: `npm run dev`
+
+## Deployment
+
+**Backend (Render / Railway):**
+Deploy the FastAPI backend by pointing your platform to the `backend` directory and using the start command: `uvicorn main:app --host 0.0.0.0 --port $PORT`
