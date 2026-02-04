@@ -40,3 +40,9 @@ An AI-powered tool designed to process documents and content, leveraging Groq (L
 
 **Backend (Render / Railway):**
 Deploy the FastAPI backend by pointing your platform to the `backend` directory and using the start command: `uvicorn main:app --host 0.0.0.0 --port $PORT`
+
+**Frontend (Vercel / Netlify):**
+Deploy the Vite React app by pointing your platform to the `frontend` directory. Ensure you set the `VITE_API_URL` environment variable if your backend is hosted.
+
+**Database (Neon.tech):**
+Use Neon's free tier for PostgreSQL. Ensure you enable the `pgvector` extension in your Neon dashboard SQL editor: `CREATE EXTENSION IF NOT EXISTS vector;`
