@@ -8,3 +8,10 @@ function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+    document.documentElement.classList.toggle('dark');
+  };
+
+  return (
+    <div className="flex h-screen overflow-hidden">
+      <Sidebar 
