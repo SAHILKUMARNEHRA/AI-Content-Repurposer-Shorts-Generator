@@ -15,3 +15,10 @@ function App() {
   return (
     <div className="flex h-screen overflow-hidden">
       <Sidebar 
+        documents={documents} 
+        setDocuments={setDocuments} 
+        selectedDoc={selectedDoc} 
+        setSelectedDoc={setSelectedDoc}
+        toggleDarkMode={toggleDarkMode}
+        isDarkMode={isDarkMode}
+      />
