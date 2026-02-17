@@ -22,3 +22,10 @@ function App() {
         toggleDarkMode={toggleDarkMode}
         isDarkMode={isDarkMode}
       />
+      <main className="flex-1 flex flex-col bg-white dark:bg-gray-800">
+        <Chat selectedDoc={selectedDoc} />
+      </main>
+    </div>
+  );
+}
+
