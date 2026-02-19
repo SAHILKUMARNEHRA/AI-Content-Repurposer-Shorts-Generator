@@ -4,3 +4,10 @@ import axios from 'axios';
 
 const Chat = ({ selectedDoc }) => {
   const [messages, setMessages] = useState([]);
+  const [input, setInput] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [provider, setProvider] = useState('groq');
+  const messagesEndRef = useRef(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
