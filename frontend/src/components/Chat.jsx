@@ -18,3 +18,10 @@ const Chat = ({ selectedDoc }) => {
   }, [messages]);
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!input.trim() || isLoading) return;
+
+    const userMessage = { text: input, role: 'user' };
+    setMessages(prev => [...prev, userMessage]);
+    setInput('');
+    setIsLoading(true);
