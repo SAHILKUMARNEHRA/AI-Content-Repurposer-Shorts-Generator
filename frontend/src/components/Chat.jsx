@@ -25,3 +25,10 @@ const Chat = ({ selectedDoc }) => {
     setMessages(prev => [...prev, userMessage]);
     setInput('');
     setIsLoading(true);
+
+    try {
+      const response = await axios.post('http://localhost:8000/chat', {
+        query: userMessage.text,
+        provider: provider,
+        document_id: selectedDoc?.id || null
+      });
