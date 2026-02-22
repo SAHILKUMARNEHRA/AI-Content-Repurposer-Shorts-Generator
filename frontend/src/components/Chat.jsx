@@ -32,3 +32,10 @@ const Chat = ({ selectedDoc }) => {
         provider: provider,
         document_id: selectedDoc?.id || null
       });
+
+      const botMessage = { text: response.data.answer, role: 'bot' };
+      setMessages(prev => [...prev, botMessage]);
+    } catch (error) {
+      setMessages(prev => [...prev, { text: "Failed to connect to AI server.", role: 'bot', isError: true }]);
+    } finally {
+      setIsLoading(false);
