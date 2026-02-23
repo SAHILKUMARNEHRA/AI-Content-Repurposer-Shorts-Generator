@@ -39,3 +39,10 @@ const Chat = ({ selectedDoc }) => {
       setMessages(prev => [...prev, { text: "Failed to connect to AI server.", role: 'bot', isError: true }]);
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  return (
+    <div className="flex flex-col h-full bg-white dark:bg-gray-800 shadow-xl rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700">
+      <div className="flex justify-between items-center p-4 bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
+        <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-100 flex items-center gap-2">
