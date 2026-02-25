@@ -53,3 +53,10 @@ const Chat = ({ selectedDoc }) => {
             onClick={() => setProvider('groq')} 
             className={`flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium transition-colors ${provider === 'groq' ? 'bg-orange-100 text-orange-600 dark:bg-orange-900 dark:text-orange-300' : 'bg-gray-200 text-gray-600 dark:bg-gray-700 dark:text-gray-400'}`}
           >
+            <Zap size={14} /> Groq (Llama3)
+          </button>
+          <button 
+            onClick={() => setProvider('gemini')} 
+            className={`flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium transition-colors ${provider === 'gemini' ? 'bg-blue-100 text-blue-600 dark:bg-blue-900 dark:text-blue-300' : 'bg-gray-200 text-gray-600 dark:bg-gray-700 dark:text-gray-400'}`}
+          >
+            <Sparkles size={14} /> Gemini
