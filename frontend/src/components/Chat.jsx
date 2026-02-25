@@ -67,3 +67,10 @@ const Chat = ({ selectedDoc }) => {
       <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50 dark:bg-gray-900">
         {messages.length === 0 && (
           <div className="flex flex-col items-center justify-center h-full text-gray-500 dark:text-gray-400 space-y-4">
+            <Bot size={48} className="opacity-50" />
+            <p className="text-center">Ask anything about your documents.<br/> Powered by advanced RAG technology.</p>
+          </div>
+        )}
+        {messages.map((msg, index) => (
+          <div key={index} className={`flex items-start gap-3 ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+            {msg.role === 'bot' && (
