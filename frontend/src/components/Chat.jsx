@@ -60,3 +60,10 @@ const Chat = ({ selectedDoc }) => {
             className={`flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium transition-colors ${provider === 'gemini' ? 'bg-blue-100 text-blue-600 dark:bg-blue-900 dark:text-blue-300' : 'bg-gray-200 text-gray-600 dark:bg-gray-700 dark:text-gray-400'}`}
           >
             <Sparkles size={14} /> Gemini
+          </button>
+        </div>
+      </div>
+
+      <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50 dark:bg-gray-900">
+        {messages.length === 0 && (
+          <div className="flex flex-col items-center justify-center h-full text-gray-500 dark:text-gray-400 space-y-4">
