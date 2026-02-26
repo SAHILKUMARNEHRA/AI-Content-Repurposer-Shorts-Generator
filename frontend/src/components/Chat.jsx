@@ -74,3 +74,10 @@ const Chat = ({ selectedDoc }) => {
         {messages.map((msg, index) => (
           <div key={index} className={`flex items-start gap-3 ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
             {msg.role === 'bot' && (
+              <div className="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-blue-600 dark:text-blue-300 flex-shrink-0">
+                <Bot size={18} />
+              </div>
+            )}
+            <div className={`px-4 py-2 rounded-2xl max-w-[80%] shadow-sm ${
+              msg.role === 'user' 
+                ? 'bg-blue-600 text-white rounded-br-none' 
