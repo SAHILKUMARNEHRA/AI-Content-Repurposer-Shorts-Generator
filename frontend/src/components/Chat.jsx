@@ -81,3 +81,10 @@ const Chat = ({ selectedDoc }) => {
             <div className={`px-4 py-2 rounded-2xl max-w-[80%] shadow-sm ${
               msg.role === 'user' 
                 ? 'bg-blue-600 text-white rounded-br-none' 
+                : msg.isError 
+                  ? 'bg-red-50 text-red-600 border border-red-200 dark:bg-red-900 dark:text-red-200 dark:border-red-800 rounded-bl-none'
+                  : 'bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-700 rounded-bl-none'
+            }`}>
+              <p className="text-sm whitespace-pre-wrap leading-relaxed">{msg.text}</p>
+            </div>
+            {msg.role === 'user' && (
