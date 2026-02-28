@@ -88,3 +88,10 @@ const Chat = ({ selectedDoc }) => {
               <p className="text-sm whitespace-pre-wrap leading-relaxed">{msg.text}</p>
             </div>
             {msg.role === 'user' && (
+              <div className="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-600 dark:text-gray-300 flex-shrink-0">
+                <User size={18} />
+              </div>
+            )}
+          </div>
+        ))}
+        {isLoading && (
