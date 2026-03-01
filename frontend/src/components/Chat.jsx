@@ -95,3 +95,10 @@ const Chat = ({ selectedDoc }) => {
           </div>
         ))}
         {isLoading && (
+          <div className="flex items-start gap-3 justify-start animate-pulse">
+            <div className="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-blue-600 dark:text-blue-300 flex-shrink-0">
+              <Bot size={18} />
+            </div>
+            <div className="px-4 py-3 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-bl-none flex gap-1 items-center shadow-sm">
+              <div className="w-2 h-2 rounded-full bg-gray-400 animate-bounce" style={{ animationDelay: '0ms' }} />
+              <div className="w-2 h-2 rounded-full bg-gray-400 animate-bounce" style={{ animationDelay: '150ms' }} />
