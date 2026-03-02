@@ -116,3 +116,10 @@ const Chat = ({ selectedDoc }) => {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder={selectedDoc ? `Ask about ${selectedDoc.filename}...` : "Type a message..."}
+            className="flex-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full pl-4 pr-12 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-transparent dark:border-gray-700 transition-all shadow-inner"
+            disabled={isLoading}
+          />
+          <button
+            type="submit"
+            disabled={isLoading || !input.trim()}
+            className="absolute right-2 p-2 rounded-full bg-blue-600 hover:bg-blue-700 text-white disabled:opacity-50 disabled:cursor-not-allowed transition-colors shadow-md flex items-center justify-center"
