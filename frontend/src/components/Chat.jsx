@@ -109,3 +109,10 @@ const Chat = ({ selectedDoc }) => {
         <div ref={messagesEndRef} />
       </div>
 
+      <form onSubmit={handleSubmit} className="p-4 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+        <div className="flex items-center gap-2 relative">
+          <input
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder={selectedDoc ? `Ask about ${selectedDoc.filename}...` : "Type a message..."}
