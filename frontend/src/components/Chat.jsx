@@ -123,3 +123,10 @@ const Chat = ({ selectedDoc }) => {
             type="submit"
             disabled={isLoading || !input.trim()}
             className="absolute right-2 p-2 rounded-full bg-blue-600 hover:bg-blue-700 text-white disabled:opacity-50 disabled:cursor-not-allowed transition-colors shadow-md flex items-center justify-center"
+          >
+            <Send size={18} />
+          </button>
+        </div>
+      </form>
+    </div>
+  );
