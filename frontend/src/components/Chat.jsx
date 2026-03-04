@@ -130,3 +130,6 @@ const Chat = ({ selectedDoc }) => {
       </form>
     </div>
   );
+};
+
+export default Chat;
