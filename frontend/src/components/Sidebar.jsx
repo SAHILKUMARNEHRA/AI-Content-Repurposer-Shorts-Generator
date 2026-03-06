@@ -9,3 +9,10 @@ const Sidebar = ({ documents, setDocuments, selectedDoc, setSelectedDoc, toggleD
         <h1 className="text-xl font-bold text-blue-600 dark:text-blue-400">AI Content Repurposer</h1>
         <button onClick={toggleDarkMode} className="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-800">
           {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+        </button>
+      </div>
+
+      <div className="p-4">
+        <Uploader setDocuments={setDocuments} setSelectedDoc={setSelectedDoc} />
+      </div>
+
