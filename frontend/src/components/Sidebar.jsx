@@ -23,3 +23,10 @@ const Sidebar = ({ documents, setDocuments, selectedDoc, setSelectedDoc, toggleD
         ) : (
           documents.map(doc => (
             <div 
+              key={doc.id} 
+              onClick={() => setSelectedDoc(doc)}
+              className={`flex items-center space-x-2 p-2 rounded-md cursor-pointer transition-colors ${selectedDoc?.id === doc.id ? 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-200' : 'hover:bg-gray-200 dark:hover:bg-gray-800'}`}
+            >
+              <FileText size={16} />
+              <span className="text-sm truncate">{doc.filename}</span>
+            </div>
