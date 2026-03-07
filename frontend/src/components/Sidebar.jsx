@@ -16,3 +16,10 @@ const Sidebar = ({ documents, setDocuments, selectedDoc, setSelectedDoc, toggleD
         <Uploader setDocuments={setDocuments} setSelectedDoc={setSelectedDoc} />
       </div>
 
+      <div className="flex-1 overflow-y-auto p-4 space-y-2">
+        <h2 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Your Documents</h2>
+        {documents.length === 0 ? (
+          <p className="text-sm text-gray-400 italic">No documents uploaded yet.</p>
+        ) : (
+          documents.map(doc => (
+            <div 
