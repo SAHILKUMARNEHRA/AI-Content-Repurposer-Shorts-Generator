@@ -30,3 +30,10 @@ const Sidebar = ({ documents, setDocuments, selectedDoc, setSelectedDoc, toggleD
               <FileText size={16} />
               <span className="text-sm truncate">{doc.filename}</span>
             </div>
+          ))
+        )}
+      </div>
+      
+      <div className="p-4 border-t border-gray-200 dark:border-gray-700 text-xs text-gray-500 text-center">
+        Powered by Groq & Gemini
+      </div>
