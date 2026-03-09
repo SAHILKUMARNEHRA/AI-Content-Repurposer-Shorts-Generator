@@ -37,3 +37,8 @@ const Sidebar = ({ documents, setDocuments, selectedDoc, setSelectedDoc, toggleD
       <div className="p-4 border-t border-gray-200 dark:border-gray-700 text-xs text-gray-500 text-center">
         Powered by Groq & Gemini
       </div>
+    </aside>
+  );
+};
+
+export default Sidebar;
