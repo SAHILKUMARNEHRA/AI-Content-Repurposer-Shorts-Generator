@@ -7,3 +7,10 @@ const Uploader = ({ setDocuments, setSelectedDoc }) => {
   const [error, setError] = useState(null);
 
   const handleFileUpload = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    if (file.type !== 'application/pdf') {
+      setError('Only PDF files are supported.');
+      return;
+    }
