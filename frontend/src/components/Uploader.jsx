@@ -14,3 +14,10 @@ const Uploader = ({ setDocuments, setSelectedDoc }) => {
       setError('Only PDF files are supported.');
       return;
     }
+
+    const formData = new FormData();
+    formData.append('file', file);
+
+    setIsUploading(true);
+    setError(null);
+
