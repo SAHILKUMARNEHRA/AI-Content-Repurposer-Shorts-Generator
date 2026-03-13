@@ -21,3 +21,10 @@ const Uploader = ({ setDocuments, setSelectedDoc }) => {
     setIsUploading(true);
     setError(null);
 
+    try {
+      const response = await axios.post('http://localhost:8000/upload', formData, {
+        headers: { 'Content-Type': 'multipart/form-data' }
+      });
+
+      const newDoc = {
+        id: response.data.document_id,
