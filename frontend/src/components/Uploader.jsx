@@ -28,3 +28,10 @@ const Uploader = ({ setDocuments, setSelectedDoc }) => {
 
       const newDoc = {
         id: response.data.document_id,
+        filename: file.name
+      };
+
+      setDocuments(prev => [...prev, newDoc]);
+      setSelectedDoc(newDoc);
+    } catch (err) {
+      console.error(err);
