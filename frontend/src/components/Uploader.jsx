@@ -35,3 +35,10 @@ const Uploader = ({ setDocuments, setSelectedDoc }) => {
       setSelectedDoc(newDoc);
     } catch (err) {
       console.error(err);
+      setError('Failed to upload and process document.');
+    } finally {
+      setIsUploading(false);
+    }
+  };
+
+  return (
