@@ -42,3 +42,10 @@ const Uploader = ({ setDocuments, setSelectedDoc }) => {
   };
 
   return (
+    <div className="flex flex-col items-center justify-center p-4 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg hover:border-blue-500 transition-colors bg-white dark:bg-gray-800 cursor-pointer relative overflow-hidden group">
+      <input 
+        type="file" 
+        accept=".pdf" 
+        onChange={handleFileUpload} 
+        className="absolute inset-0 opacity-0 cursor-pointer w-full h-full z-10"
+        disabled={isUploading}
