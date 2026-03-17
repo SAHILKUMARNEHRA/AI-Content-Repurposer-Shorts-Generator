@@ -49,3 +49,10 @@ const Uploader = ({ setDocuments, setSelectedDoc }) => {
         onChange={handleFileUpload} 
         className="absolute inset-0 opacity-0 cursor-pointer w-full h-full z-10"
         disabled={isUploading}
+      />
+      {isUploading ? (
+        <Loader className="animate-spin text-blue-500 mb-2" size={32} />
+      ) : (
+        <UploadCloud className="text-gray-400 group-hover:text-blue-500 mb-2 transition-colors" size={32} />
+      )}
+      <p className="text-sm font-medium text-gray-600 dark:text-gray-300">
