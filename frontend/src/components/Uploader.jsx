@@ -56,3 +56,10 @@ const Uploader = ({ setDocuments, setSelectedDoc }) => {
         <UploadCloud className="text-gray-400 group-hover:text-blue-500 mb-2 transition-colors" size={32} />
       )}
       <p className="text-sm font-medium text-gray-600 dark:text-gray-300">
+        {isUploading ? 'Processing PDF...' : 'Upload PDF'}
+      </p>
+      {error && <p className="text-xs text-red-500 mt-2 text-center">{error}</p>}
+    </div>
+  );
+};
+
