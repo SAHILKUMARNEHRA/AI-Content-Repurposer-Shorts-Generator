@@ -63,3 +63,4 @@ const Uploader = ({ setDocuments, setSelectedDoc }) => {
   );
 };
 
+export default Uploader;
