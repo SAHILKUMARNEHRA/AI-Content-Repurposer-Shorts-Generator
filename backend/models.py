@@ -18,3 +18,4 @@ class DocumentChunk(Base):
     content = Column(Text)
     embedding = Column(Vector(384)) # HuggingFace all-MiniLM-L6-v2 uses 384 dimensions
 
+    document = relationship("Document", back_populates="chunks")
