@@ -4,3 +4,10 @@ sqlalchemy
 psycopg2-binary
 pgvector
 pydantic
+pydantic-settings
+python-multipart
+python-dotenv
+PyMuPDF
+sentence-transformers
+groq
+google-generativeai
