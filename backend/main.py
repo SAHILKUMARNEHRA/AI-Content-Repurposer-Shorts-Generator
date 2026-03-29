@@ -13,3 +13,10 @@ from services.ai_chat import get_answer
 
 # Initialize Database
 models.Base.metadata.create_all(bind=engine)
+
+app = FastAPI(title="AI Content Repurposer API")
+
+# Setup CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
