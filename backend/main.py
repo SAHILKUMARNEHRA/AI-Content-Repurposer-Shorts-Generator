@@ -20,3 +20,10 @@ app = FastAPI(title="AI Content Repurposer API")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+os.makedirs("uploads", exist_ok=True)
+
