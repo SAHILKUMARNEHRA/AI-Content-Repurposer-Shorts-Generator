@@ -27,3 +27,10 @@ app.add_middleware(
 
 os.makedirs("uploads", exist_ok=True)
 
+@app.get("/")
+def read_root():
+    return {"status": "ok", "message": "Welcome to AI Content Repurposer API"}
+
+@app.post("/upload")
+async def upload_document(file: UploadFile = File(...), db: Session = Depends(get_db)):
+    if not file.filename.endswith(".pdf"):
