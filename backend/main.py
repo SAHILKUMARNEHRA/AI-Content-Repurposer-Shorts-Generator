@@ -34,3 +34,10 @@ def read_root():
 @app.post("/upload")
 async def upload_document(file: UploadFile = File(...), db: Session = Depends(get_db)):
     if not file.filename.endswith(".pdf"):
+        raise HTTPException(status_code=400, detail="Only PDF files are supported")
+    
+    file_path = f"uploads/{file.filename}"
+    with open(file_path, "wb") as f:
+        f.write(await file.read())
+    
+    # Save to db
