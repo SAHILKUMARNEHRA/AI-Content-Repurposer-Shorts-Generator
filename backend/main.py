@@ -41,3 +41,10 @@ async def upload_document(file: UploadFile = File(...), db: Session = Depends(ge
         f.write(await file.read())
     
     # Save to db
+    doc = models.Document(filename=file.filename)
+    db.add(doc)
+    db.commit()
+    db.refresh(doc)
+    
+    # Extract & Chunk
+    text_content = extract_text_from_pdf(file_path)
