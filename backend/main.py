@@ -48,3 +48,10 @@ async def upload_document(file: UploadFile = File(...), db: Session = Depends(ge
     
     # Extract & Chunk
     text_content = extract_text_from_pdf(file_path)
+    chunks = chunk_text(text_content)
+    
+    if not chunks:
+        raise HTTPException(status_code=400, detail="Could not extract text from PDF")
+        
+    # Embed
+    embeddings = get_embeddings_batch(chunks)
