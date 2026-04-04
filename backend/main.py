@@ -55,3 +55,10 @@ async def upload_document(file: UploadFile = File(...), db: Session = Depends(ge
         
     # Embed
     embeddings = get_embeddings_batch(chunks)
+    
+    # Save chunks
+    for i, chunk_text_data in enumerate(chunks):
+        chunk_model = models.DocumentChunk(
+            document_id=doc.id,
+            content=chunk_text_data,
+            embedding=embeddings[i].tolist()
