@@ -62,3 +62,10 @@ async def upload_document(file: UploadFile = File(...), db: Session = Depends(ge
             document_id=doc.id,
             content=chunk_text_data,
             embedding=embeddings[i].tolist()
+        )
+        db.add(chunk_model)
+        
+    db.commit()
+    return {"message": "Document processed and stored", "document_id": doc.id, "chunks_created": len(chunks)}
+
+from pydantic import BaseModel
