@@ -69,3 +69,10 @@ async def upload_document(file: UploadFile = File(...), db: Session = Depends(ge
     return {"message": "Document processed and stored", "document_id": doc.id, "chunks_created": len(chunks)}
 
 from pydantic import BaseModel
+
+class ChatRequest(BaseModel):
+    query: str
+    provider: str = "groq"
+    document_id: int = None
+
+@app.post("/chat")
