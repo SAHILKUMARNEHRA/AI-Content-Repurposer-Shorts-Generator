@@ -76,3 +76,10 @@ class ChatRequest(BaseModel):
     document_id: int = None
 
 @app.post("/chat")
+async def chat(request: ChatRequest, db: Session = Depends(get_db)):
+    query_embedding = get_embedding(request.query).tolist()
+    
+    # Search closest chunks
+    # Using pgvector L2 distance operator (<->)
+    if request.document_id:
+        chunks = db.query(models.DocumentChunk).filter(models.DocumentChunk.document_id == request.document_id).order_by(models.DocumentChunk.embedding.l2_distance(query_embedding)).limit(3).all()
