@@ -83,3 +83,10 @@ async def chat(request: ChatRequest, db: Session = Depends(get_db)):
     # Using pgvector L2 distance operator (<->)
     if request.document_id:
         chunks = db.query(models.DocumentChunk).filter(models.DocumentChunk.document_id == request.document_id).order_by(models.DocumentChunk.embedding.l2_distance(query_embedding)).limit(3).all()
+    else:
+        chunks = db.query(models.DocumentChunk).order_by(models.DocumentChunk.embedding.l2_distance(query_embedding)).limit(3).all()
+        
+    if not chunks:
+        return {"answer": "I don't have enough context to answer that.", "context": []}
+        
+    context = "\n\n".join([chunk.content for chunk in chunks])
