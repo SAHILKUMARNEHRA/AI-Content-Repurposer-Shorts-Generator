@@ -90,3 +90,10 @@ async def chat(request: ChatRequest, db: Session = Depends(get_db)):
         return {"answer": "I don't have enough context to answer that.", "context": []}
         
     context = "\n\n".join([chunk.content for chunk in chunks])
+    
+    answer = get_answer(context, request.query, request.provider)
+    
+    return {
+        "answer": answer,
+        "context_used": [{"content": chunk.content, "document_id": chunk.document_id} for chunk in chunks]
+    }
