@@ -20,3 +20,10 @@ else:
 def get_answer_groq(context: str, query: str) -> str:
     if not groq_client:
         return "Groq API key not configured."
+    
+    prompt = f"Context:\n{context}\n\nQuestion:\n{query}\n\nAnswer based on the context above:"
+    completion = groq_client.chat.completions.create(
+        model="llama3-8b-8192",
+        messages=[{"role": "user", "content": prompt}]
+    )
+    return completion.choices[0].message.content
