@@ -27,3 +27,10 @@ def get_answer_groq(context: str, query: str) -> str:
         messages=[{"role": "user", "content": prompt}]
     )
     return completion.choices[0].message.content
+
+def get_answer_gemini(context: str, query: str) -> str:
+    if not gemini_model:
+        return "Gemini API key not configured."
+    
+    prompt = f"Context:\n{context}\n\nQuestion:\n{query}\n\nAnswer based on the context above:"
+    response = gemini_model.generate_content(prompt)
