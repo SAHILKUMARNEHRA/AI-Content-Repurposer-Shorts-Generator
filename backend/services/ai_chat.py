@@ -34,3 +34,9 @@ def get_answer_gemini(context: str, query: str) -> str:
     
     prompt = f"Context:\n{context}\n\nQuestion:\n{query}\n\nAnswer based on the context above:"
     response = gemini_model.generate_content(prompt)
+    return response.text
+
+def get_answer(context: str, query: str, provider: str = "groq") -> str:
+    if provider == "gemini":
+        return get_answer_gemini(context, query)
+    return get_answer_groq(context, query)
